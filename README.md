@@ -11,6 +11,7 @@ Without enabler [Midnight Glow](https://github.com/notasz/Brackets-Midnightglow)
 With enabler [Midnight Glow](https://github.com/notasz/Brackets-Midnightglow) looks like this:
 ![HTML](screenshots/with.png)
 
-Notes
+Notes / To do List
 ---
-Currently this extension only applies the theme at launch, and on reload. I need to add a listener for theme changes, but i'm not entirely sure how to do that just yet.
+- Currently this extension only applies the theme at launch, and on reload. I need to add a listener for theme changes, but i'm not entirely sure how to do that just yet.
+- Add an option to enable/disable in the Theme modal.
