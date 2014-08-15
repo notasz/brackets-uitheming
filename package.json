@@ -1,0 +1,12 @@
+{
+    "name": "notasz-uitheming",
+    "title": "Brackets UI Theming Enabler",
+    "description": "A simple extension to allow native Brackets themes to theme any available UI elements",
+    "homepage": "https://github.com/notasz/brackets-uitheming",
+    "version": "1.0.0",
+    "author": "Ryan McKay <ryanmckay@outlook.com>",
+    "license": "MIT",
+    "engines": {
+        "brackets": ">=0.42.0"
+    }
+}
