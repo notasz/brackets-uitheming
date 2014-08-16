@@ -2,13 +2,21 @@
 
 define(function (require, exports, module) {
     var ThemeManager = brackets.getModule("view/ThemeManager");
+    var PreferencesManager = brackets.getModule("preferences/PreferencesManager");
+    var prefs = PreferencesManager.getExtensionPrefs("themes");
+    var themeIsPresent = document.getElementById("cssUiThemeEnabler");
 
-    //Setup applyTheme function -- Calls for current theme path and appends theme css to brackets body
+    //Setup applyTheme function -- Calls for current theme path and appends theme css to brackets body, if theme is already present, removes previous theme before applying new one.
     var applyTheme = function () {
-        //Setting up var for the current theme pathing
         var currentTheme = ThemeManager.getCurrentTheme().file._path;
-        //Apply current theme
-        $("body").append('<link rel="stylesheet" href=" ' + currentTheme + '">');
+        if (themeIsPresent !== undefined) {
+            $("#cssUiThemeEnabler").remove();
+            $("body").append('<link id="cssUiThemeEnabler" rel="stylesheet" href=" ' + currentTheme + '">');
+        } else {
+            $("body").append('<link id="cssUiThemeEnabler" rel="stylesheet" href=" ' + currentTheme + '">');
+        }
     };
-    applyTheme();
+    prefs.on("change", "theme", function () {
+        applyTheme();
+    });
 });
